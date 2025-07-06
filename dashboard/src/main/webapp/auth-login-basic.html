@@ -1,0 +1,170 @@
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ This piece of work is to enhance nova project functionality.                                  ~
+  ~                                                                                               ~
+  ~ Author:    eomisore                                                                           ~
+  ~ File:      auth-login-basic.html                                                              ~
+  ~ Created:   22/04/2025, 22:42                                                                  ~
+  ~ Modified:  22/04/2025, 23:12                                                                  ~
+  ~                                                                                               ~
+  ~ Copyright (c)  2025.  Aerosimo Ltd                                                            ~
+  ~                                                                                               ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a                       ~
+  ~ copy of this software and associated documentation files (the "Software"),                    ~
+  ~ to deal in the Software without restriction, including without limitation                     ~
+  ~ the rights to use, copy, modify, merge, publish, distribute, sublicense,                      ~
+  ~ and/or sell copies of the Software, and to permit persons to whom the                         ~
+  ~ Software is furnished to do so, subject to the following conditions:                          ~
+  ~                                                                                               ~
+  ~ The above copyright notice and this permission notice shall be included                       ~
+  ~ in all copies or substantial portions of the Software.                                        ~
+  ~                                                                                               ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,                               ~
+  ~ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES                               ~
+  ~ OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND                                      ~
+  ~ NONINFINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT                                    ~
+  ~ HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,                                  ~
+  ~ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING                                  ~
+  ~ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE                                    ~
+  ~ OR OTHER DEALINGS IN THE SOFTWARE.                                                            ~
+  ~                                                                                               ~
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<!doctype html>
+
+<html
+        class="layout-wide customizer-hide"
+        data-assets-path="assets/"
+        data-template="vertical-menu-template-free"
+        lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" name="viewport"/>
+    <meta content="Elijah Omisore" name="author">
+    <meta content="Aerosimo 1.0.0" name="generator">
+    <meta content="Aerosimo" name="application-name">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="Aerosimo IT Consultancy" name="description">
+    <meta content="Aerosimo" name="apple-mobile-web-app-title">
+    <meta content="Oracle, Java, Tomcat, Maven, Jenkins, Bitbucket, Github" name="keywords">
+    <!-- Title -->
+    <title>Nova Signin | Aerosimo Ltd</title>
+    <!-- Favicon -->
+    <link href="assets/img/favicon/favicon.ico" rel="shortcut icon"/>
+    <link href="assets/img/favicon/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="assets/img/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="assets/img/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="assets/img/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="assets/img/favicon/android-chrome-192x192.png" rel="android-chrome" sizes="192x192">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+    <!-- CSS Files -->
+    <link
+            href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+            rel="stylesheet"/>
+    <link href="assets/vendor/fonts/iconify-icons.css" rel="stylesheet"/>
+    <!-- Core CSS -->
+    <!-- build:css assets/vendor/css/theme.css  -->
+    <link href="assets/vendor/css/core.css" rel="stylesheet"/>
+    <link href="assets/css/demo.css" rel="stylesheet"/>
+    <!-- Vendors CSS -->
+    <link href="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet"/>
+    <!-- endbuild -->
+    <!-- Page CSS -->
+    <!-- Page -->
+    <link href="assets/vendor/css/pages/page-auth.css" rel="stylesheet"/>
+    <!-- Helpers -->
+    <script src="assets/vendor/js/helpers.js"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contains global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="assets/js/config.js"></script>
+</head>
+
+<body>
+<!-- Content -->
+<div class="container-xxl">
+    <div class="authentication-wrapper authentication-basic container-p-y">
+        <div class="authentication-inner">
+            <!-- Register -->
+            <div class="card px-sm-6 px-0">
+                <div class="card-body">
+                    <!-- Logo -->
+                    <div class="app-brand justify-content-center">
+                        <span class="app-brand-logo demo">
+                            <img alt="logo icon" src="assets/img/favicon/logo-icon.png">
+                        </span>
+                    </div>
+                    <!-- /Logo -->
+                    <h4 class="mb-1">Welcome to Nova! 👋</h4>
+                    <p class="mb-6">Please sign in to your account and start the adventure</p>
+                    <form action="signin" class="mb-6" id="formAuthentication" method="POST">
+                        <div class="mb-6">
+                            <label class="form-label" for="email">Email or Username</label>
+                            <input
+                                    autofocus
+                                    class="form-control"
+                                    id="email"
+                                    name="email-username"
+                                    placeholder="Enter your email or username"
+                                    type="text"/>
+                        </div>
+                        <div class="mb-6 form-password-toggle">
+                            <label class="form-label" for="password">Password</label>
+                            <div class="input-group input-group-merge">
+                                <input
+                                        aria-describedby="password"
+                                        autocomplete="off"
+                                        class="form-control"
+                                        id="password"
+                                        minlength="8"
+                                        name="pword"
+                                        placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                                        required
+                                        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                        type="password"
+                                />
+                                <span class="input-group-text cursor-pointer"><i
+                                        class="icon-base bx bx-hide"></i></span>
+                            </div>
+                        </div>
+                        <div class="mb-8">
+                            <div class="d-flex justify-content-between">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" id="remember-me" type="checkbox"/>
+                                    <label class="form-check-label" for="remember-me"> Remember Me </label>
+                                </div>
+                                <a href="html/auth-forgot-password-basic.html">
+                                    <span>Forgot Password?</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <button class="btn btn-primary d-grid w-100" type="submit">Login</button>
+                        </div>
+                    </form>
+                    <p class="text-center">
+                        <span>New on our platform?</span>
+                        <a href="auth-register-basic.html">
+                            <span>Create an account</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <!-- /Register -->
+        </div>
+    </div>
+</div>
+<!-- Core JS -->
+<script src="assets/vendor/libs/jquery/jquery.js"></script>
+<script src="assets/vendor/libs/popper/popper.js"></script>
+<script src="assets/vendor/js/bootstrap.js"></script>
+<script src="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="assets/vendor/js/menu.js"></script>
+<script async defer src="assets/js/buttons.js"></script>
+<!-- endbuild -->
+<!-- Vendors JS -->
+<!-- Main JS -->
+<script src="assets/js/main.js"></script>
+<!-- Page JS -->
+</body>
+</html>
